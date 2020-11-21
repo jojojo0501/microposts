@@ -10,8 +10,10 @@ class MicropostsController extends Controller
     {
         $data=[];
         if (\Auth::check()){
+            //認証済みのユーザを取得
             $user=\Auth::user();
-            $microposts=$user->microposts()->orderBy("created_at","desc")->paginate(10);
+            // ユーザとフォロー中ユーザの投稿の一覧を作成日時の降順で取得
+            $microposts=$user->feed_microposts()->orderBy("created_at","desc")->paginate(10);
             
             $data=[
                 "user"=>$user,
