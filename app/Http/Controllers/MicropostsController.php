@@ -50,7 +50,7 @@ class MicropostsController extends Controller
         
         // ユーザの投稿一覧を作成日時の降順で取得
         $microposts = $user->microposts()->orderBy('created_at', 'desc')->paginate(10);
-dd($microposts);
+
         // ユーザ詳細ビューでそれらを表示
         return view("users.show",["user"=>$user,"microposts"=>$microposts]);
     }
