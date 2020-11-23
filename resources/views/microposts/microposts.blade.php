@@ -21,6 +21,10 @@
                     {!! Form::close() !!}
                     @endif
                  </div>
+                 <div>
+                    <!--お気に入り登録ボタン-->
+                    @include("favorites.favorite_button")
+                 </div>
              </div>
         </li>
         @endforeach
